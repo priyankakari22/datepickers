@@ -9,15 +9,19 @@ import { AppComponent } from './app.component';
 import { MyDatePickerModule } from 'mydatepicker';
 import { MyDateRangePickerModule } from 'mydaterangepicker';
 
+
+
+
 @NgModule({
   declarations: [AppComponent],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     MyDatePickerModule,
     ReactiveFormsModule,
     FormsModule,
-    MyDateRangePickerModule
+    MyDateRangePickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

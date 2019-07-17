@@ -8,12 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyDatePickerModule } from 'mydatepicker';
 import { MyDateRangePickerModule } from 'mydaterangepicker';
+import { ChildDatepickerComponent } from './child-datepicker/child-datepicker.component';
+import { DpComponent } from './dp/dp.component';
+import { EmitterComponent } from './emitter/emitter.component';
+
+
 
 
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ChildDatepickerComponent, DpComponent, EmitterComponent],
 
   imports: [
     BrowserModule,
@@ -21,7 +26,7 @@ import { MyDateRangePickerModule } from 'mydaterangepicker';
     MyDatePickerModule,
     ReactiveFormsModule,
     FormsModule,
-    MyDateRangePickerModule,
+    MyDateRangePickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

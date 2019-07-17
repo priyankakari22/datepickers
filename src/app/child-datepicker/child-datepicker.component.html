@@ -1,0 +1,22 @@
+<!-- <form  novalidate>
+  <div class="row">
+    <div class="form-group col-md-6">
+      childDatepicker1: <my-date-picker name="childDate" [(ngModel)]="childDate" [options]="myDatePickerOptions"
+        (dateChanged)="OnDateChanged($event)" ></my-date-picker>
+        
+    </div>
+  </div>
+</form> -->
+<div class ="a"align=center>
+  <form [formGroup]="child">
+
+  <label>Child</label>
+  
+       <my-date-picker name="item"  [options]="myDatePickerOptions"
+        (dateChanged)="OnDateChanged($event)" (inputFieldChanged)="onInputFieldChanged($event)" formconmtrolName="item"></my-date-picker>
+        {{Message}}
+        </form>
+        <a [routerLink]="[ '/child' ]"> child </a>
+  
+</div>
+

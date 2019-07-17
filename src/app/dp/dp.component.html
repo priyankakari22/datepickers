@@ -1,0 +1,48 @@
+<form [formGroup]="form" novalidate>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <my-date-picker name="date" formControlName="date" [options]="myDatePickerOptions"
+          (dateChanged)="DateChanged($event)"></my-date-picker>
+      </div>
+  
+      <div class="form-group col-md-6">
+        <h3>{{ (formate | date:'shortDate') || (dob | date:'shortDate')}}</h3>
+      </div>
+    </div>
+    <div class=row>
+      <div class="form-group col-md-6">
+        <my-date-picker name="date1" (dateChanged)="onDateChanged($event)" formControlName="date1"
+          [options]="myDatePickerOptions1"></my-date-picker>
+      </div>
+      <div class="form-group col-md-6">
+        <h3>{{ (formate1 | date:'shortDate') || (dob | date:'shortDate') }}</h3>
+      </div>
+    </div>
+    <div class=row>
+      <div class="form-group col-md-4">
+        <label>Forword and reverse</label><br>
+        <my-date-range-picker name="range" [options]="myDateRangePickerOptions" formControlName="range"
+          (dateRangeChanged)="onDateRangeChanged($event)">
+        </my-date-range-picker>
+      </div>
+      <div class="form-group col-md-4">
+        <label>Reverse</label><br>
+        <my-date-range-picker name="range1" [options]="myDateRangePickerOptions1" formControlName="range1"
+          (dateRangeChanged)="onDateRangeChanged1($event)">
+        </my-date-range-picker>
+      </div>
+      </div>
+  </form>
+  
+  
+  <!-- <div class="form-group col-md-4">
+        <input class="form-control" type="text" name="input" formControlName="input" (click)="submit()" />
+      </div>
+    </div>
+  
+  
+  
+  <app-child-datepicker (childDate)="date2=$event;savechange(date2=$event)"></app-child-datepicker>
+   {{date2}} 
+   <input type="text" name="date2" [value]="date2" (click)="submit()" /> -->
+  

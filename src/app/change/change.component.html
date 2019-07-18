@@ -1,0 +1,47 @@
+
+<div class="a">
+        <h3 style="color: rgb(0, 0, 0); text-align: center"> Change password</h3><br>
+        <form [formGroup]="change" autocomplete="off" (ngSubmit)="change.valid" novalidate>
+      
+      
+          <label>Old password:</label>
+          <div class="form-group">
+            <input type="password" id='old' formControlName='old' class="form-control form-control-lg" placeholder="Old password"
+              required>
+            <span *ngIf="change.get('old').errors &&
+                              (change.get('old').touched || change.get('old').dirty)">
+              <span *ngIf="change.get('old').errors.required"><br>
+                <p style="color: red">required.</p>
+              </span>
+      
+            </span>
+          </div>
+      
+      
+          <label> New password:</label>
+          <div class="form-group">
+            <input type="password" id="new" formControlName="new" class="form-control form-control-lg" placeholder="New password"
+              required>
+            <span *ngIf="change.get('new').errors && (change.get('new').touched ||
+              change.get('new').dirty)">
+              <span *ngIf="change.get('new').errors.required"><br>
+                <p style="color: red">required...</p>
+              </span>
+            </span>
+          </div>
+      
+          <div align=center>
+            <button type="submit" (click)="conform()" class="btn btn-primary">confirm</button>
+            <span *ngIf="password == false">
+              <p style="color: crimson">please enter old password</p>
+            </span>
+            <span *ngIf="password == true">
+              <p style="color: rgb(58, 114, 6)">Conformed your new password...</p>
+              <button type="button" (click)="backtologin()" class="btn btn-success">login</button>
+            </span>
+      
+      
+          </div>
+        </form>
+      </div>
+      

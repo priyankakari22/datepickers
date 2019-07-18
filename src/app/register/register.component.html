@@ -1,0 +1,104 @@
+
+<div class="a">
+        <h2 style="text-align: center">Registration Form</h2>
+        <form [formGroup]="registerform" autocomplete="off" (ngSubmit)="registerform.valid" novalidate>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Name</label>
+              <input type="text" id="name" formControlName="name" name="name" class="form-control form-control-sm"
+                placeholder="Name" required>
+              <span *ngIf="registerform.get('name').errors && (registerform.get('name').touched ||
+                    registerform.get('name').dirty)">
+                <span *ngIf="registerform.get('name').errors.required">
+                  <p>required......</p>
+                </span>
+                <span *ngIf="registerform.get('name').errors.pattern">
+                  <p>should be alphabets</p>
+                </span>
+              </span>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Date of birth</label>
+              <my-date-picker name="dob" id="dob" [options]="myDatePickerOptions" formControlName="dob"
+                placeholder="yyyy-mm-dd" required>
+              </my-date-picker>
+              <span *ngIf="registerform.get('dob').errors && (registerform.get('dob').touched ||
+                              registerform.get('dob').dirty)">
+                <span *ngIf="registerform.get('dob').errors.required">
+                  <p>required......</p>
+                </span>
+              </span>
+            </div>
+          </div>
+      
+      
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">Phone number</label>
+              <input type="text" id="num" formControlName="num" class="form-control form-control-sm"
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57 " placeholder="Phone umber" required>
+              <span *ngIf="registerform.get('num').errors && (registerform.get('num').touched ||
+              registerform.get('num').dirty)">
+                <span *ngIf="registerform.get('num').errors.required">
+                  <p>required..</p>
+                </span>
+                <span *ngIf="registerform.get('num').errors.pattern">
+                  <p>invalid..</p>
+                </span>
+              </span>
+            </div>
+      
+            <div class="form-group col-md-6">
+              <label for="inputCity">Email</label>
+              <input type="text" id="email" formControlName="email" class="form-control form-control-sm" placeholder="Email"
+                required>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <span *ngIf="registerform.get('email').errors && (registerform.get('email').touched ||
+              registerform.get('email').dirty)">
+                <span *ngIf="registerform.get('email').errors.required">
+                  <p>required..</p>
+                </span>
+                <span *ngIf="registerform.get('email').errors.pattern">
+                  <p>invalid..</p>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="address" formControlName="address" placeholder="enter address">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputState">State</label>
+              <ng-multiselect-dropdown [placeholder]="'select state'" [data]="states" id="state" name="state"
+                formControlName="state" [disabled]="disabled" [settings]="dropdownSettings" (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)">
+      
+              </ng-multiselect-dropdown>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="gender">Gender</label>
+              Male:<input type="radio" id="gender" name="gender" value="male" required>
+      
+              Female:<input type="radio" id="gender" name="gender" value="female" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                I agree this terms and condition.
+              </label>
+            </div>
+          </div>
+          <div align=center>
+            <button type="submit" (click)="onSubmit(registerform.value)" class="btn btn-primary">Register</button>
+            <div align = right>
+            <button class="btn btn-info" (click)="back()">Back</button>
+            </div>
+          </div>
+      
+        </form>
+      </div>
+      

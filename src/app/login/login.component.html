@@ -1,0 +1,45 @@
+
+<h1 style="text-align: center"> Welcom to ABC </h1>
+<div class="a">
+  <h2 style="color:rgb(41, 27, 9); text-align: center">Login</h2>
+
+  <form [formGroup]="login" autocomplete="off" (ngSubmit)="login.valid" novalidate>
+
+    <div class="form-group">
+      <label> Username :</label>
+
+
+      <input type="text" id="name" formControlName="name" class="form-control" placeholder="Username" required>
+      <span *ngIf="login.get('name').errors &&
+                        (login.get('name').touched || login.get('name').dirty)">
+        <span *ngIf="login.get('name').errors.required"><br>
+          <p> required..</p>
+        </span>
+
+      </span>
+    </div>
+
+    <label>Password :</label>
+
+    <div class="form-group">
+      <input type="password" id="pswd" formControlName="pswd" class="form-control" required placeholder="Password">
+      <span *ngIf="login.get('pswd').errors &&
+                            (login.get('pswd').touched || login.get('pswd').dirty)">
+        <span *ngIf="login.get('pswd').errors.required"><br>
+          <p>required..</p>
+        </span>
+
+      </span>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-success text-center" (click)="onsubmit()">Login</button>
+      </div>
+    </div>
+    <a routerLink='/pswd'>Change pasword...</a>
+
+
+  </form>
+</div>
+

@@ -1,0 +1,88 @@
+<div class="a">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="form-group col-md-6">
+
+        <label>
+          First Name: <input type="text" name="fname" formControlName="fname" />
+        </label>
+        <span *ngIf="form.get('fname').errors &&
+            (form.get('fname').touched || form.get('fname').dirty)">
+          <span *ngIf="form.get('fname').errors.required"><br>
+            <p> required..</p>
+          </span>
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        <label>
+          Last Name: <input type="text" name="lname" formControlName="lname" />
+        </label>
+        <span *ngIf="form.get('lname').errors &&
+        (form.get('lname').touched || form.get('lname').dirty)">
+          <span *ngIf="form.get('lname').errors.required"><br>
+            <p> required..</p>
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>
+          Date Of Birth: <input name="dob" formControlName="dob" />
+        </label>
+        <span *ngIf="form.get('dob').errors &&
+        (form.get('dob').touched || form.get('dob').dirty)">
+          <span *ngIf="form.get('dob').errors.required"><br>
+            <p> required..</p>
+          </span>
+        </span>
+      </div>
+      <div class="form-group col-md-6">
+        Address: <textarea rows="auto" cols="auto" name="address" formControlName="address"></textarea>
+      </div>
+      <span *ngIf="form.get('address').errors &&
+        (form.get('address').touched || form.get('address').dirty)">
+        <span *ngIf="form.get('address').errors.required"><br>
+          <p> required..</p>
+        </span>
+      </span>
+
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-6">
+        <div formArrayName="email">
+          <div *ngFor="let item of mail.controls; let pointIndex=index" [formGroupName]="pointIndex">
+            <label>Email:</label><br>
+            <input type="text" name="point" formControlName="point" />
+            <button type="button" (click)="delete(pointIndex)">Delete</button>
+            &nbsp;&nbsp;&nbsp;<button type="button" (click)="add()">Add</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <div formArrayName="num">
+          <div *ngFor="let item of mob.controls; let pointIndex=index" [formGroupName]="pointIndex">
+            <label>
+              Phone Number : <input name="point1" formControlName="point1" />
+              <button type="button" (click)="delete1(pointIndex)">Delete</button>
+              &nbsp;&nbsp;&nbsp;<button type="button" (click)="add1()">Add</button>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div align=center>
+      <button class="btn btn-primary center-block" (click)=" onsubmit()">
+        Submit
+      </button>
+    </div>
+
+  </form>
+</div>

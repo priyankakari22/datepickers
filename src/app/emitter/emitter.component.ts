@@ -41,11 +41,11 @@ export class EmitterComponent implements OnInit {
       input: new FormControl({value: ''}, [Validators.required]),
     });
   }
-  onEnter(value1: any) {
-    //this.value = moment(value1).format('MM/DD/YYYY');
-    this.value = value1.target.value;
-    console.log(this.value);
-   }
+  // onEnter(value1: any) {
+  //   // this.value = moment(value1).format('MM/DD/YYYY');
+  //   this.value = value1.target.value;
+  //   console.log(this.value);
+  //  }
   data(event: any) {
      this.data1 = event;
      console.log(event);

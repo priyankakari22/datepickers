@@ -1,0 +1,51 @@
+body{
+    margin:0px;
+    background-color: grey;
+}
+body a{
+    text-decoration:none;
+}
+header .navigation-bar{
+    background-color: teal;   
+    margin:0px;
+}
+header .navigation-bar::after{
+    content:"";
+    clear:both;
+    display: table;
+}
+header .navigation-bar ul{
+    list-style-type: none;
+    margin:0px;
+    /* position: relative; */
+}
+header .navigation-bar ul li{
+    float:left;
+    padding:20px;
+    position: relative;
+}
+header .navigation-bar ul li a{
+    color:white;
+}
+header .navigation-bar ul li ul{
+    position: absolute;
+    left: 0px;
+    padding: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+header .navigation-bar ul li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    background-color: cadetblue;
+}
+header .navigation-bar ul li:hover ul li a{
+    color:black;
+}
+header .navigation-bar ul li ul li {
+    float: initial;
+}
+header .navigation-bar ul li ul li:hover{
+    background-color: beige;
+}
+

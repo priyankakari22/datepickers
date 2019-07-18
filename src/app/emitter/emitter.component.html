@@ -1,14 +1,16 @@
-<div align=center>
+<div  class="a" align=center>
     <form [formGroup]="form">
     <label>parent</label>
     <!-- <input type="date" name="input" [value]="data1" formControlName="input"
  class="form-control" /> -->
 
-<input type="date" name="input" [value]="data1" formControlName="input"
- class="form-control" #box (input)="onEnter($event)"/>
+<input type="text" name="input" [value]="data1" formControlName="input"
+ class="form-control" >
+  <!-- (input)="onEnter($event)"/> -->
  <p>{{value}}</p>
 
 </form>
-<app-child-datepicker (childDate1)="data($event)" [Message] ="value" ></app-child-datepicker>
-
 </div>
+<app-child-datepicker (childDate1)="data($event)" ></app-child-datepicker>
+
+

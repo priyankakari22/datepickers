@@ -13,8 +13,8 @@
   <label>Child</label>
   
        <my-date-picker name="item"  [options]="myDatePickerOptions"
-        (dateChanged)="OnDateChanged($event)" (inputFieldChanged)="onInputFieldChanged($event)" formconmtrolName="item"></my-date-picker>
-        {{Message}}
+        (dateChanged)="OnDateChanged($event)"  formconmtrolName="item"></my-date-picker>
+
         </form>
         <a [routerLink]="[ '/child' ]"> child </a>
   

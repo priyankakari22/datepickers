@@ -1,0 +1,62 @@
+#include<stdio.h>
+
+int main() {
+   int x;
+   printf("enter value");
+ 
+   scanf("%d",&x);
+   for(int i=1; i<100;i++)
+   {
+       printf("%d x %d = %d",x,i,x*i);
+       printf("\n");
+       
+   }
+   
+}
+
+
+
+
+
+//prime or not
+#include<stdio.h>
+void main()
+{
+    int num,i,count=0;
+    printf("enter number");
+    scanf("%d",&num);
+    for(i=1;i<=num;i++)
+    {
+        if(num%i==0)
+            count++;
+        
+    }
+    if(count==2)
+        printf("%d is prime",num);
+    else
+        printf("%d is not prime",num);
+    
+}
+
+
+
+
+
+//1-n:
+#include<stdio.h>
+ void main()
+ {
+     int num,i,rem=0;
+     int temp=num;
+     printf("enter value of num");
+     scanf("%d",&num);
+     rem=num%10;
+     printf("%d",rem);
+     num=num/10;
+     if(rem==temp)
+     {
+         break;
+     }
+     
+}
+
